@@ -1,4 +1,4 @@
-FROM node:9
+FROM node:10-buster
 MAINTAINER Tony Motakis <tvelocity@gmail.com>
 MAINTAINER Steve Liedtke <steve@steveliedtke.de>
 
@@ -7,7 +7,7 @@ ENV NODE_ENV production
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    curl unzip mysql-client node-pg postgresql-client && \
+    curl unzip default-mysql-client node-pg postgresql-client && \
     rm -r /var/lib/apt/lists/*
 
 WORKDIR /opt/
